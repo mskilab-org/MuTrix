@@ -94,3 +94,95 @@ Example code to get you started:
 ## for more documentation
 ?muTrix
 ```
+
+```{R}
+
+muTrix                 package:muTrix                  R Documentation
+
+muTrix
+
+Description:
+
+     Plots a matrix of mutations in genes x patients with pretty colors
+     denoting mutation type.  Also works with seg data frames and
+     dranger output to plot CNA's and rearrangements, respectively.
+
+     Also works with lists of gene lists and lists of patients tracks
+     (either named vectors, data frames, or matrices) to create panels
+     of mutaitons.
+
+     Assumes standard "annotated" maf file format (output of oncotator)
+     with fields $Variant_Classification, $Hugo_Symbol
+
+     Additional input is seg data frame with fields $ID, $chr, $start,
+     $end corresponding to copy number segments for patient set.  If
+     this is provided, a second panel will be drawn that contains
+     amplified and deleted segme snts (ie with copy number greater /
+     below cn.thresh / - cn.thresh) that are labeled broad vs focal
+     based on focality.thresh.
+
+Usage:
+
+     muTrix(genes, patients = NULL, pat.tracks = NULL, bar.top = NULL,
+       maf = NULL, mat = NULL, mut.categories = NULL,
+       mat.colormap = topo.colors(20), dranger = NULL,
+       pat.labels = F, srt.pat.labels = -90, cex.pat.labels = 0.9,
+       cex.gene.labels = 1.1, include.blank = TRUE, keep.gene.ord = F,
+       keep.pat.ord = F, mark.genes = NULL, plot.protein.change = FALSE,
+       cex.protein.change = 1, srt.protein.change = 45, noncoding = TRUE,
+       show.plot = TRUE, dump.protein.change = FALSE, cex.mut = 0.5,
+       cex.cn = 0.95, cex.legend = 0.7, cex.tick = 1, cex.ylab = 1,
+       srt.ylab = 90, adj.ylab = c(0.5, 0.5), 
+       four.mut.categories = F, cex.pat.track = 1, pc.legend = 30,
+       pc.sidebar = 10, pc.ylab = 30, freq.sidebar = T,
+       top.marg.lim = NULL, bottom.marg.lim = NULL, single.scale = F,
+       pad.track = 0.5, nchar.wrap = 20, pos.ylab = 0.3,
+       gsub.ylab = c("[\\.\\_]", " "), lwd.border = 0.2,
+       col.border = TRUE, col.canvas = "gray93",
+       col.canvas.border = "gray50",
+       col.pat.tracks = lapply(rownames(brewer.pal.info[brewer.pal.info$category
+       == "qual", ]), function(x) brewer.pal(brewer.pal.info[x, "maxcolors"],
+       x)), col.true = "darkgray", string.true = "True", ncol.legend = 2)
+     
+Arguments:
+
+   genes: can be either (1) vector of genes (2) list of gene vectors,
+          in which case each vector will be drawn as a separate panel
+          with a label corresponding to the list name)
+
+patients: optional character vector of patient ids specifying subset of
+          patients to show
+
+pat.tracks: optional named list of named vectors named by patient id
+          specifying additional patient tracks or rownaems
+
+     maf: "MAF" format data.frame with (at least) the columns
+          $Tumor_Sample_Barcode, $Protein_Change, and
+          $Variant_Classification, where Tumor_Sample_Barcode is the
+          patient id
+
+     mat: optional matrix of numeric data to plot, with columns named
+          by patient ids
+
+mat.colormap: vector mapping matrix values to colors
+
+pat.labels: logical flag whether to show pat labels
+
+srt.pat.labels: angle to rotate patient labels
+
+plot.protein.change: flag whether to plot protein change
+
+cex.protein.change: size of protein change label
+
+srt.protein.change: rotation of protein change label
+
+cex.legend: size of legend
+
+mut.categories: optional named vector mapping variant classes (ie
+          unique values in $Variant_Classification column of maf)to
+          colors, used to specify alternate coloring schemes.
+
+col.canvas: color of canvas
+
+col.pat.tracks: list (same length as pat.tracks)
+```
