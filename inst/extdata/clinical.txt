@@ -1,0 +1,25 @@
+id	smoking_status	stage	gender
+LUAD-S01345-Tumor	Ex Smoker	IB	Male
+LUAD-FH5PJ-Tumor	Ex Smoker	IB	Male
+LUAD-D02326-Tumor	Never Smoker	IIA	Female
+LUAD-E01317-Tumor	Ex Smoker		Female
+LUAD-S01302-Tumor	Current Smoker	IB	Male
+LUAD-S00488-Tumor	Ex Smoker	IIIA	Male
+LUAD-S01478-Tumor	Ex Smoker	IB	Male
+LUAD-S01381-Tumor	Ex Smoker	IB	Male
+LUAD-5V8LT-Tumor	Ex Smoker	IB	Male
+LUAD-S01331-Tumor	Ex Smoker	IIIA	Male
+LUAD-AEIUF-Tumor	Ex Smoker		Female
+LU-A08-43-Tumor	Never Smoker	IV	Male
+LUAD-E01014-Tumor	Ex Smoker	IIIA	Female
+LUAD-U6SJ7-Tumor	Ex Smoker	IA	Male
+LUAD-S01404-Tumor	Current Smoker	IIIA	Male
+LUAD-E01278-Tumor		IIA	Female
+LUAD-S01467-Tumor	Current Smoker	IB	Male
+LUAD-2GUGK-Tumor	Ex Smoker	IIA	Female
+LUAD-E00934-Tumor		IB	Male
+LUAD-QY22Z-Tumor	Ex Smoker	IB	Male
+LUAD-S01405-Tumor	Current Smoker	IIA	Male
+LUAD-S01356-Tumor	Ex Smoker	IB	Male
+LUAD-S01346-Tumor	Current Smoker	IIB	Male
+LUAD-S01341-Tumor	Ex Smoker	IIIA	Female

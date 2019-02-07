@@ -38,28 +38,7 @@ Note: Other packages such as
 are much more feature rich and likely more appropriate for modern cancer
 genome analysis.
 
-
-## Installation
-------
-
-1. Install devtools
-
-```{r}
-install.packages('devtools')
-install.packages('testthat')
-```
-2. Install MuTrix
-
-```{r}
-devtools::install_github('mskilab/MuTrix)
-```
-
-## Usage
-------
-
-Example code to get you started:
-
-```{R}
+Some example code to get you started:
 
     library(data.table)
     library(muTrix)
@@ -116,3 +95,7 @@ Example code to get you started:
                  smoking = clinical[, structure(smoking_status, names = id)]))
 
 ![](tutorial_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+
+    ## for more documentation
+    ?muTrix
+    ## Rendering development documentation for 'muTrix'

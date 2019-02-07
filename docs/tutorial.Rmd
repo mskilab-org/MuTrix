@@ -1,0 +1,93 @@
+---
+title: "MuTrix Tutorial"
+author: "Marcin Imielinski Laboratory"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(gTrack)
+library(rtracklayer)
+library(kableExtra)    
+library(magrittr)
+library(tidyr)
+```
+
+<style type="text/css">
+body, td {
+   font-size: 16px;
+}
+pre code, pre, code {
+  font-size: 15px;
+  color: rgb(20, 20, 20);
+  white-space: pre !important;
+  overflow-x: scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+
+h1{
+  font-size: 22pt;
+  }
+
+h2{
+  font-size: 20pt;
+  }
+
+h3{
+  font-size: 16pt;
+  }
+
+
+</style>
+
+## MuTrix
+
+MuTrix (i.e. "Mutation-Matrix") allows you to render "oncoprint"-like plots of mutation and clinical data from `data.frames` or `data.tables` of `.maf` files and associated clinical data.
+
+Note: Other packages such as [ComplexHeatmap](https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html) are much more feature rich and likely more appropriate for modern cancer genome  analysis.
+
+Some example code to get you started:
+
+```{r warning=FALSE, collapse = TRUE}
+library(data.table)
+library(muTrix)
+
+## load small maf file
+maf = fread(system.file('extdata', "mutations.maf", package = "muTrix"))
+head(maf)
+```
+
+```{r warning=FALSE, collapse = TRUE}
+## load clinical data, where "$id" matched the $Tumor_Sample_Barcode field in maf
+clinical = fread(system.file('extdata', "clinical.txt", package = "muTrix"))
+head(clinical)
+```
+
+
+```{r warning=FALSE, collapse = TRUE}
+## pick genes
+genelists = list(
+          Oncogenes = c('EGFR', 'KRAS', 'PIK3CA'),
+          TSG = c('TP53', 'STK11', 'NF1'),
+          Other = c('KEAP1', 'RBM10', 'U2AF1', 'SMARCA4'))
+genelists
+```
+
+```{r warning=FALSE, collapse = TRUE, fig.width=10}
+## example muTrix plot over above maf, genelists, and patient metadata
+mat = muTrix(maf = maf,
+       genes = genelists,
+       pat.tracks = list(
+             gender = clinical[, structure(gender, names = id)], ## vectors named by patient id
+             smoking = clinical[, structure(smoking_status, names = id)]))
+```
+
+```{r warning=FALSE, collapse = TRUE, fig.width=10}
+## for more documentation
+?muTrix
+```

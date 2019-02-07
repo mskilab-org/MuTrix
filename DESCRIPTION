@@ -1,0 +1,23 @@
+Package: muTrix
+Title: Classic oncoprints like it's 2012
+Version: 0.1.0
+Maintainer: Marcin Imielinski <mimielinski@nygenome.org>
+Authors@R: c(
+    person(given = "Marcin",
+    family = "Imielinski", role = c("aut", "cre"), email =
+    "mimielinski@nygenome.org"))
+Description: Another (old) package from making oncoprints (from 2012)
+Depends:
+    R (>= 3.2.0),
+Imports:
+    Matrix,
+    data.table,
+    methods,
+    rtracklayer,
+License: GPL-2
+LazyData: true
+BugReports: http://github.com/mskilab/MuTrix/issues
+RoxygenNote: 6.1.1
+Suggests:
+    testthat
+
