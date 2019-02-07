@@ -1,6 +1,3 @@
-<style type="text/css">
-</style>
-
 MuTrix
 ------
 
