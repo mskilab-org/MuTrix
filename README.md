@@ -1,29 +1,4 @@
 <style type="text/css">
-body, td {
-   font-size: 16px;
-}
-pre code, pre, code {
-  font-size: 15px;
-  color: rgb(20, 20, 20);
-  white-space: pre !important;
-  overflow-x: scroll !important;
-  word-break: keep-all !important;
-  word-wrap: initial !important;
-}
-
-h1{
-  font-size: 22pt;
-  }
-
-h2{
-  font-size: 20pt;
-  }
-
-h3{
-  font-size: 16pt;
-  }
-
-
 </style>
 
 MuTrix
@@ -114,5 +89,11 @@ Example code to get you started:
            pat.tracks = list(
                  gender = clinical[, structure(gender, names = id)], ## vectors named by patient id
                  smoking = clinical[, structure(smoking_status, names = id)]))
+```
 
-![](tutorial_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](https://raw.githubusercontent.com/mskilab/MuTrix/master/tutorial_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+
+```{R}
+## for more documentation
+?muTrix
+```
